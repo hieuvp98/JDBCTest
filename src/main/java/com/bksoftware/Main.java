@@ -17,7 +17,7 @@ public class Main {
             ConnectionController.connect();
             //
             ProductDAO dao = new ProductDAOImpl();
-            List<Product> productList = dao.findAll();
+            List<Product> productList = dao.find(1,0);
 
             for (Product p : productList){
                 System.out.println(p);

@@ -9,6 +9,13 @@ import java.util.List;
 
 public interface ProductDAO {
 
+    List<Product> findByCategory(int categoryId) throws SQLException;
+
+    List<Product> findByBrand(int brandId) throws SQLException;
+
+    // có thẻ chỉ dùng 1 trong 2 Id
+    List<Product> find(int categoryId, int brandId) throws SQLException;
+
     Product getObject(ResultSet rs) throws SQLException;
 
     default PreparedStatement prepare(String sql) {
